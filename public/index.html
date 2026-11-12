@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#25245f">
+
+    <title>ParkNest | Smart Campus Parking</title>
+
+    <!-- Google Fonts website er text er font style set kore -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External CSS file diye website er design control kora hoy -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <!-- Toast message diye user ke success ba error message dekhano hoy -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Login ebong registration screen ekhane thakbe -->
+    <section id="authScreen" class="auth-screen">
+
+        <!-- Login screen er left side er design ebong introduction -->
+        <div class="auth-art">
+
+            <!-- ParkNest er logo ebong brand name -->
+            <div class="brand brand-light">
+                <img
+                    src="/images/parknest-logo.jpeg"
+                    alt="ParkNest Logo"
+                    class="brand-logo"
+                >
+
+                <span>Park<span>Nest</span></span>
+            </div>
+
+            <!-- Website er main introduction -->
+            <div class="auth-message">
+
+                <div class="eyebrow">
+                    <span class="live-dot"></span>
+                    SMART CAMPUS PARKING
+                </div>
+
+                <h1>
+                    Parking made
+                    <span>simple.</span>
+                </h1>
+
+                <p>
+                    A smarter way to manage campus parking.
+                    Find available spaces, manage vehicles
+                    and enjoy a seamless parking experience.
+                </p>
+
+            </div>
+
+            <!-- Background er decorative circle -->
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+
+            <!-- Parking system er visual illustration -->
+            <div class="parking-illustration">
+                <div class="road-line"></div>
+                <div class="mini-car">🚙</div>
+                <div class="pin pin-a">P</div>
+                <div class="pin pin-b">P</div>
+                <div class="pin pin-c">P</div>
+            </div>
+
+            <!-- System er main features show kore -->
+            <div class="auth-stat-row">
+
+                <div>
+                    <h3>Smart</h3>
+                    <p>Parking System</p>
+                </div>
+
+                <div>
+                    <h3>Easy</h3>
+                    <p>Management</p>
+                </div>
+
+                <div>
+                    <h3>Fast</h3>
+                    <p>Experience</p>
+                </div>
+
+            </div>
+
+            <!-- Copyright information -->
+            <div class="auth-footer">
+                © 2026 ParkNest. All rights reserved.
+            </div>
+
+        </div>
+
+        <!-- Login ebong registration form er main panel -->
+        <div class="auth-panel">
+
+            <!-- Mobile screen e brand logo show korar jonno -->
+            <div class="mobile-brand brand">
+
+                <img
+                    src="/images/parknest-logo.jpeg"
+                    alt="ParkNest Logo"
+                    class="brand-logo"
+                >
+
+                <span>Park<span>Nest</span></span>
+
+            </div>
+
+            <div class="auth-card">
+
+                <!-- Login ba registration er heading -->
+                <div class="auth-heading">
+
+                    <div class="section-kicker">
+                        WELCOME TO PARKNEST
+                    </div>
+
+                    <h2 id="authTitle">Welcome back!</h2>
+
+                    <p id="authSubtitle">
+                        Sign in to access your parking dashboard.
+                    </p>
+
+                </div>
+
+                <!-- Existing user ei form diye login korbe -->
+                <form id="loginForm">
+
+                    <label for="loginEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="username"
+                        required
+                    >
+
+                    <label for="loginPassword">Password</label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button type="submit" class="primary-btn full">
+                        Sign In
+                    </button>
+
+                </form>
+
+                <!-- New user ei form diye account create korbe -->
+                <form id="setupForm" class="hidden">
+
+                    <label for="setupName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="setupName"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                    <label for="setupEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="setupEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <!-- User account er role select korbe -->
+                    <label for="setupRole">Create Account As</label>
+
+                    <select
+                        id="setupRole"
+                        name="role"
+                        required
+                    >
+                        <option value="owner">Parking Owner</option>
+                        <option value="guard">Guard</option>
+                    </select>
+
+                    <!-- Guard select korle tar additional information ekhane show korbe -->
+                    <div id="guardFields" class="hidden">
+
+                        <label for="guardPhone">Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="guardPhone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                        >
+
+                        <label for="guardGate">Assigned Gate</label>
+
+                        <input
+                            type="text"
+                            id="guardGate"
+                            name="assigned_gate"
+                            placeholder="Enter your assigned gate"
+                        >
+
+                    </div>
+
+                    <!-- User nijer account er password create korbe -->
+                    <label for="setupPassword">
+                        Create Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="setupPassword"
+                        name="password"
+                        placeholder="Create a strong password"
+                        autocomplete="new-password"
+                        aria-describedby="passwordRules"
+                        required
+                    >
+
+                    <!-- Password er requirements user ke show korbe -->
+                    <div class="password-rules" id="passwordRules">
+
+                        <div class="password-rules-title">
+                            Password must contain:
+                        </div>
+
+                        <p id="ruleLength" class="password-rule">
+                            ○ At least 8 characters
+                        </p>
+
+                        <p id="ruleLower" class="password-rule">
+                            ○ One lowercase letter (a-z)
+                        </p>
+
+                        <p id="ruleUpper" class="password-rule">
+                            ○ One uppercase letter (A-Z)
+                        </p>
+
+                        <p id="ruleNumber" class="password-rule">
+                            ○ One number (0-9)
+                        </p>
+
+                        <p id="ruleSpecial" class="password-rule">
+                            ○ One special character (@#$!)
+                        </p>
+
+                    </div>
+
+                    <!-- Form submit korle account create korar request jabe -->
+                    <button
+                        type="submit"
+                        id="createAccountBtn"
+                        class="primary-btn full"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+                <!-- Login ebong registration form er moddhe switch korar option -->
+                <div class="auth-switch">
+
+                    <span id="switchText">
+                        Don't have an account?
+                    </span>
+
+                    <button
+                        type="button"
+                        id="switchAuth"
+                    >
+                        Create Account
+                    </button>
+
+                </div>
+
+                <!-- Security related information -->
+                <div class="security-note">
+                    🔒 Secure campus parking management
+                </div>
+
+            </div>
+
+            <!-- Authentication panel er footer -->
+            <div class="auth-panel-foot">
+                ParkNest — Your Space, Your Convenience.
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Login successful hole main application ekhane show korbe -->
+    <div id="app" class="app hidden">
+
+        <!-- Application er sidebar ebong navigation menu -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Sidebar er top e logo ebong brand name -->
+            <div class="brand">
+
+                <img
+                    src="/images/parknest-logo.jpeg"
+                    alt="ParkNest Logo"
+                    class="brand-logo"
+                >
+
+                <span>Park<span>Nest</span></span>
+
+            </div>
+
+            <!-- User ekhane different page e navigate korte parbe -->
+            <nav class="nav">
+
+                <div class="nav-label">MAIN MENU</div>
+
+                <!-- Dashboard er overview page -->
+                <button class="nav-item active" data-page="overview">
+                    <span class="nav-icon">▦</span>
+                    <span>Overview</span>
+                </button>
+
+                <!-- Parking slot er information ebong availability -->
+                <button class="nav-item" data-page="parking">
+                    <span class="nav-icon">🅿</span>
+                    <span>Parking Slots</span>
+                    <span class="nav-pill" id="navOccupied">0</span>
+                </button>
+
+                <!-- Registered vehicle er information -->
+                <button class="nav-item" data-page="vehicles">
+                    <span class="nav-icon">🚗</span>
+                    <span>Vehicles</span>
+                </button>
+
+                <!-- Parking entry ebong exit history -->
+                <button class="nav-item" data-page="sessions">
+                    <span class="nav-icon">◷</span>
+                    <span>Parking Sessions</span>
+                </button>
+
+                <div class="nav-label">MANAGEMENT</div>
+
+                <!-- Parking payment er information -->
+                <button class="nav-item" data-page="payments">
+                    <span class="nav-icon">৳</span>
+                    <span>Payments</span>
+                </button>
+
+                <!-- Parking rules violation er information -->
+                <button class="nav-item" data-page="violations">
+                    <span class="nav-icon">⚑</span>
+                    <span>Violations</span>
+                </button>
+
+                <!-- Parking system er report -->
+                <button class="nav-item" data-page="reports">
+                    <span class="nav-icon">▤</span>
+                    <span>Reports</span>
+                </button>
+
+                <!-- Ei option sudhu Admin er jonno available thakbe -->
+                <button
+                    class="nav-item admin-only hidden"
+                    data-page="guards"
+                >
+                    <span class="nav-icon">♙</span>
+                    <span>Guard Applications</span>
+                </button>
+
+            </nav>
+
+            <!-- Sidebar er bottom section e help ebong user information thakbe -->
+            <div class="sidebar-bottom">
+
+                <!-- User support information -->
+                <div class="help-card">
+
+                    <div class="help-icon">✦</div>
+
+                    <h4>Need Help?</h4>
+
+                    <p>
+                        Get support with your parking management.
+                    </p>
+
+                    <button id="helpBtn" type="button">
+                        Get Support →
+                    </button>
+
+                </div>
+
+                <!-- Currently logged in user er information -->
+                <div class="user-mini">
+
+                    <div class="avatar" id="userAvatar">U</div>
+
+                    <div class="user-mini-text">
+                        <strong id="userName">User Name</strong>
+                        <small id="userRole">Administrator</small>
+                    </div>
+
+                    <!-- Logout button click korle account theke logout korbe -->
+                    <button
+                        class="logout"
+                        id="logoutBtn"
+                        type="button"
+                        title="Logout"
+                    >
+                        ↗
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- Main dashboard er content area -->
+        <main class="main">
+
+            <!-- Dashboard er top navigation bar -->
+            <header class="topbar">
+
+                <div class="top-left">
+
+                    <!-- Mobile screen e sidebar open korar button -->
+                    <button
+                        id="menuBtn"
+                        class="menu-btn"
+                        type="button"
+                        aria-label="Open menu"
+                    >
+                        ☰
+                    </button>
+
+                    <div>
+
+                        <!-- Current page er location show kore -->
+                        <div class="breadcrumb">
+                            ParkNest /
+                            <span id="breadcrumbPage">Overview</span>
+                        </div>
+
+                        <!-- Current page er title JavaScript diye update hobe -->
+                        <h2 id="pageTitle">Overview</h2>
+
+                    </div>
+
+                </div>
+
+                <!-- Topbar er right side e date ebong user profile thakbe -->
+                <div class="top-actions">
+
+                    <div class="date-chip">
+                        <span>▦</span>
+                        <span id="todayDate">Today</span>
+                    </div>
+
+                    <div class="top-avatar" id="topAvatar">U</div>
+
+                </div>
+
+            </header>
+
+            <!-- JavaScript ei section er moddhe dashboard er content load korbe -->
+            <section class="content" id="pageContent">
+
+                <!-- Data load howar age loading animation show korbe -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading ParkNest...</p>
+                </div>
+
+            </section>
+
+            <!-- Main application er footer -->
+            <footer class="app-footer">
+                © 2026 ParkNest. Smart Campus Parking Management System.
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript diye popup ba modal open korar jonno ei section use hobe -->
+    <dialog id="modal" class="modal">
+
+        <!-- Modal er heading ebong close button -->
+        <div class="modal-head">
+
+            <div>
+
+                <div id="modalEyebrow" class="section-kicker">
+                    PARKNEST
+                </div>
+
+                <h2 id="modalTitle">Details</h2>
+
+            </div>
+
+            <button
+                id="closeModal"
+                class="modal-close"
+                type="button"
+                aria-label="Close modal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <!-- JavaScript diye modal er dynamic information show korbe -->
+        <div id="modalBody" class="modal-body"></div>
+
+    </dialog>
+
+    <!-- Main JavaScript file website er functionality control korbe -->
+    <script src="/app.js"></script>
+
+</body>
+
+</html>
