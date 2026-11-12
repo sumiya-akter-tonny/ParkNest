@@ -1897,3 +1897,86 @@ tbody tr:hover { background: #f5f9ff; }
     transform: none;
     box-shadow: none;
 }
+
+/* =========================================
+   PARKNEST - GLOBAL BUTTON HOVER FIX
+   Fix white text on white background
+========================================= */
+
+/* General button hover */
+button:hover {
+    color: inherit;
+}
+
+/* Normal buttons */
+.btn:not(.btn-dark):hover {
+    background: #e8f1ff !important;
+    color: #253b5b !important;
+    border-color: #c8dcf8;
+}
+
+/* Primary buttons */
+.btn-dark,
+.btn-dark:hover,
+.btn-dark:focus {
+    color: #ffffff !important;
+}
+
+.btn-dark:hover {
+    background: linear-gradient(
+        110deg,
+        #1555c0,
+        #2878ff,
+        #00bccc
+    ) !important;
+
+    background-position: right center;
+    background-size: 200% auto;
+
+    color: #ffffff !important;
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 22px rgba(40, 120, 255, 0.30);
+}
+
+/* Sidebar navigation */
+.nav-item:hover,
+.nav-item.active {
+    color: #ffffff !important;
+}
+
+/* Topbar icon buttons */
+.icon-btn:hover,
+.mobile-menu:hover {
+    color: #1555c0 !important;
+    background: #edf5ff !important;
+}
+
+/* Sidebar logout */
+.logout:hover {
+    color: #ffffff !important;
+    background: #d84f65 !important;
+}
+
+/* Text links */
+.text-link:hover {
+    color: #1555c0 !important;
+}
+
+/* Authentication switch */
+.auth-switch button:hover {
+    color: var(--primary) !important;
+}
+
+/* Premium logout button */
+#logoutBtn.logout-btn:hover {
+    color: #ffffff !important;
+}
+
+/* Disabled buttons */
+button:disabled,
+button:disabled:hover {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
